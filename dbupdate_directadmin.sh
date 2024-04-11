@@ -13,7 +13,6 @@ truncate -s 0 $LOG_FILE
 echo -e "\n========================================================================\nStarting Update process, logs will be saved at $LOG_FILE\n========================================================================\n" | tee -a "$LOG_FILE"
 
 AUTH="-uda_admin -p$(grep -oP 'password="\K[^"]+' /usr/local/directadmin/conf/my.cnf)"
-OS_VERSION=$(rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release) | cut -d "." -f1)
 DATE=$(/usr/bin/date +%s)
 
 #Function to execute and print
